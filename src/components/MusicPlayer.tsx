@@ -34,7 +34,9 @@ export const MusicPlayer = ({ externalPlay }: MusicPlayerProps) => {
             height="0"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=${isPlaying ? 1 : 0}&mute=0&loop=1&playlist=${videoId}`}
             title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+            frameBorder="0"
           ></iframe>
         </div>
       )}
