@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { MessageSquare, User, Send, Heart } from 'lucide-react';
+import { MessageSquare, User, Heart } from 'lucide-react';
 
 interface Wish {
   id: number;
