@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FCF8F3;
+  --color-coffee: #5D4037;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E5C76B;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-script: "Great Vibes", cursive;
+  --font-sans: "Montserrat", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cream text-coffee font-sans;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+
+  .script-text {
+    @apply font-script;
+  }
+}
+
+/* Custom Utilities */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ornament {
+  @apply relative inline-block;
+}
+
+.ornament::before, .ornament::after {
+  content: "";
+  @apply absolute top-1/2 w-12 h-px bg-gold/50;
+}
+
+.ornament::before {
+  @apply -left-16;
+}
+
+.ornament::after {
+  @apply -right-16;
+}
