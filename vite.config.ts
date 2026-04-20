@@ -4,14 +4,16 @@ import tailwindcss from '@tailwindcss/vite'
 import fs from 'node:fs'
 import path from 'node:path'
 
+import type { ViteDevServer, Connect } from 'vite'
+
 // A simple plugin to save wishes to a JSON file during development
 const saveWishesPlugin = () => ({
   name: 'save-wishes-plugin',
-  configureServer(server) {
-    server.middlewares.use(async (req, res, next) => {
+  configureServer(server: ViteDevServer) {
+    server.middlewares.use(async (req: Connect.IncomingMessage, res: any, next: Connect.NextFunction) => {
       if (req.url === '/api/save-wish' && req.method === 'POST') {
         let body = '';
-        req.on('data', chunk => {
+        req.on('data', (chunk: Buffer | string) => {
           body += chunk.toString();
         });
         
